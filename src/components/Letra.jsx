@@ -2,13 +2,14 @@ import React from 'react'
 import useLetras from '../hooks/useLetras'
 
 const Letra = () => {
-    const {letra,cargando,busqueda}=useLetras()
+    const {letra,cargando}=useLetras()
   return (
    cargando ? <Spinner />:
      <>
-     <h3>Letra: {busqueda.cancion}</h3>
+     <h4>Letra</h4>
     <div className='letra'>{letra}</div>
-    </>
+
+     </>
   )
 }
 

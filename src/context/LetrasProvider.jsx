@@ -8,10 +8,6 @@ const LetrasProvider = ({children})=>{
     const [alerta, setAlerta]=useState('')
     const [letra, setLetra]=useState('')
     const [cargando, setCargando]=useState(false)
-    const [busqueda, setBusqueda]=useState({
-        artista: '',
-        cancion: ''
-    })
 
     const busquedaLetra = async (buscar)=>{
         setCargando(true)
@@ -28,7 +24,7 @@ const LetrasProvider = ({children})=>{
         
         
         setLetra(resultado.lyrics)
-        setAlerta('')
+        
       }catch (error){
         console.log(error)
         setAlerta('Artista o Canción no Encontrada...')
@@ -42,10 +38,7 @@ const LetrasProvider = ({children})=>{
             setAlerta,
             busquedaLetra,
             letra,
-            cargando,
-            setLetra,
-            busqueda,
-            setBusqueda
+            cargando
         }}>
 
         {children}

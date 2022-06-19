@@ -8,6 +8,10 @@ const LetrasProvider = ({children})=>{
     const [alerta, setAlerta]=useState('')
     const [letra, setLetra]=useState('')
     const [cargando, setCargando]=useState(false)
+    const [busqueda, setBusqueda]=useState({
+        artista: '',
+        cancion: ''
+    })
 
     const busquedaLetra = async (buscar)=>{
         setCargando(true)
@@ -39,7 +43,9 @@ const LetrasProvider = ({children})=>{
             busquedaLetra,
             letra,
             cargando,
-            setLetra
+            setLetra,
+            busqueda,
+            setBusqueda
         }}>
 
         {children}

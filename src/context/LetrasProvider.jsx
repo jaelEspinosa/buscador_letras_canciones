@@ -15,7 +15,8 @@ const LetrasProvider = ({children})=>{
         const url = `https://api.lyrics.ovh/v1/${buscar.artista}/${buscar.cancion}`
         const respuesta = await fetch(url)
         const resultado = await respuesta.json()
-        if(respuesta.status){
+        console.log(typeof respuesta.status)
+        if(respuesta.status=== 404){
             setAlerta('Artista o Canción no Encontrada..')
         }
         // Se puede hacer con axios instalando por cli axios
@@ -29,9 +30,11 @@ const LetrasProvider = ({children})=>{
         
       }catch (error){
         console.log(error)
-        setAlerta('Artista o Canción no Encontrada...')
+        
       }
+      
       setCargando(false)
+      
     }
     return(
         <LetrasContext.Provider 
